@@ -9,7 +9,7 @@
     "test:debug": "npx playwright test --debug",
     "test:report": "npx playwright show-report"
   },
-  "keywords": [ 
+  "keywords": [
     "playwright", "testing"
    ],
   "author": "",
