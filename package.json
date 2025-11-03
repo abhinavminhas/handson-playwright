@@ -1,14 +1,22 @@
 {
   "name": "handson-playwright",
   "version": "1.0.0",
-  "description": "",
+  "description": "playwright handson project",
   "main": "index.js",
-  "scripts": {},
-  "keywords": [],
+  "scripts": {
+    "test": "npx playwright test",
+    "test:headed": "npx playwright test --headed",
+    "test:debug": "npx playwright test --debug",
+    "test:report": "npx playwright show-report"
+  },
+  "keywords": [
+    "playwright", "testing"
+   ],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@playwright/test": "^1.56.1",
-    "@types/node": "^24.9.1"
+    "@types/node": "^24.9.1",
+    "dotenv": "^17.2.3"
   }
 }
