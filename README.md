@@ -1,21 +1,21 @@
 # 🎭 **Playwright**
-Playwright enables reliable end-to-end testing for modern web apps.
+*Playwright enables reliable end-to-end testing for modern web apps.*
 
 ## 🚀 Getting Started
 [![Playwright](https://img.shields.io/badge/Awesome-Playwright-orange)](https://playwright.dev/)
 [![Playwright Tests](https://github.com/abhinavminhas/handson-playwright/actions/workflows/playwright.yml/badge.svg)](https://github.com/abhinavminhas/handson-playwright/actions/workflows/playwright.yml)
 
-*Ensure [Node.js](https://nodejs.org/en/download) is installed.*
-#### **[AUT](https://playwright.dev/)**
+*Requires [Node.js](https://nodejs.org/en/download) to be installed.*
+
 #### Install Dependencies
-``` javascript
+``` js
 npm install
 ```
 #### Run Tests
-``` javascript
+``` js
 npx playwright test
 ```
 #### Show Report
-``` javascript
+``` js
 npx playwright show-report
 ```
