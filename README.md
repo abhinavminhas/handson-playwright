@@ -1,4 +1,6 @@
-# 🎭**Playwright**
+# 🎭 **Playwright**
+Playwright enables reliable end-to-end testing for modern web apps.
+
 ## 🚀 Getting Started
 [![Playwright](https://img.shields.io/badge/Awesome-Playwright-orange)](https://playwright.dev/)
 [![Playwright Tests](https://github.com/abhinavminhas/handson-playwright/actions/workflows/playwright.yml/badge.svg)](https://github.com/abhinavminhas/handson-playwright/actions/workflows/playwright.yml)
