@@ -4,6 +4,10 @@
   "description": "playwright handson project",
   "main": "index.js",
   "scripts": {
+    "install": "npx playwright install --with-deps",
+    "install:chromium": "npx playwright install --with-deps chromium",
+    "install:firefox": "npx playwright install --with-deps firefox",
+    "install:webkit": "npx playwright install --with-deps webkit",
     "test": "npx playwright test",
     "test:headed": "npx playwright test --headed",
     "test:debug": "npx playwright test --debug",
@@ -12,8 +16,8 @@
   "keywords": [
     "playwright", "testing"
    ],
-  "author": "",
-  "license": "ISC",
+  "author": "Abhinav Minhas",
+  "license": "MIT",
   "devDependencies": {
     "@playwright/test": "^1.56.1",
     "@types/node": "^24.9.1",
