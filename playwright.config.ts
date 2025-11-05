@@ -6,7 +6,7 @@ import { defineConfig, devices } from '@playwright/test';
  */
 import dotenv from 'dotenv';
 import path from 'path';
-dotenv.config({ path: path.resolve(__dirname, '.env') });
+dotenv.config({ path: path.resolve(__dirname, '.env'), quiet: true });
 
 const viewPortWidth = 1280;
 const viewPortHeight = 700;
@@ -28,6 +28,7 @@ export default defineConfig({
   reporter: [
     [ 'html', { open: 'never' } ],
     [ 'junit' , { outputFile: 'playwright-report/results.xml' } ],
+    [ 'list' ]
   ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
