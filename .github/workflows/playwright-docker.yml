@@ -1,0 +1,28 @@
+name: Playwright Tests
+on:
+  push:
+    branches: [ main, dev ]
+    paths-ignore:
+      - '**.md'
+  pull_request:
+    branches: [ main, dev ]
+  workflow_dispatch:
+    
+jobs:
+  docker-test:
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Install Docker Compose
+      run: npm ci
+    - name: Install Playwright Browsers
+      run: sudo apt-get update && sudo apt-get install -y docker-compose
+    - name: Run Playwright tests
+      run: docker-compose run --rm playwright
+    - uses: actions/upload-artifact@v4
+      if: ${{ !cancelled() }}
+      with:
+        name: playwright-report
+        path: playwright-report/
+        retention-days: 30
