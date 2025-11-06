@@ -10,7 +10,7 @@ dotenv.config({ path: path.resolve(__dirname, '.env'), quiet: true });
 
 /* Configure viewport to apply to browsers for all tests. */
 const viewPortWidth = 1280;
-const viewPortHeight = 700;
+const viewPortHeight = 720;
 
 /**
  * See https://playwright.dev/docs/test-configuration.
