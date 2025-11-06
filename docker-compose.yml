@@ -1,5 +1,5 @@
 services:
-  playwright-tests:
+  playwright:
     image: mcr.microsoft.com/playwright:v1.56.1  # Official Playwright image
     container_name: playwright-runner
     working_dir: /app
