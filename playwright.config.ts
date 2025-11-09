@@ -8,8 +8,9 @@ import dotenv from 'dotenv';
 import path from 'path';
 dotenv.config({ path: path.resolve(__dirname, '.env'), quiet: true });
 
+/* Configure viewport to apply to browsers for all tests. */
 const viewPortWidth = 1280;
-const viewPortHeight = 700;
+const viewPortHeight = 720;
 
 /**
  * See https://playwright.dev/docs/test-configuration.
@@ -27,18 +28,32 @@ export default defineConfig({
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: [
     [ 'html', { open: 'never' } ],
-    [ 'junit' , { outputFile: 'playwright-report/results.xml' } ],
+    [ 'junit' , { outputFile: 'playwright-report/junit/results.xml' } ],
     [ 'list' ]
   ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('')`. */
     // baseURL: 'http://localhost:3000',
-
+    
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
-    /* Whether to run browser in headless mode. */
+    /* Whether to run browser in headless mode. Defaults to true. */
     headless: true,
+    /* Capture screenshots */
+    screenshot: {
+      mode: 'only-on-failure',
+      fullPage: true,
+    },
+    /* Capture videos */
+    video: {
+      mode: 'retain-on-failure',
+      size: { width: viewPortWidth, height: viewPortHeight },
+    },
+    /* Set default timeout in milliseconds for actions like `click()`, `fill()`, etc. Defaults to 0 (no timeout) */
+    actionTimeout: 5 * 1000, // 5 seconds
+    /* Set default maximum time  in milliseconds for each navigation operation. Defaults to 30 seconds */
+    navigationTimeout: 30 * 1000, // 30 seconds
   },
 
   /* Configure projects for major browsers */
